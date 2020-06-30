@@ -9,7 +9,7 @@ Library : matplot, seabon, sklearn, pandas, numpy
 Used for Coopertion : Github
 ```
 
-### 2. Author
+### 2. Contribute
 
 > [@Sichan Song](https://github.com/sichan0107) <br>
 > [@Wooseok Han](https://github.com/hanwo)
