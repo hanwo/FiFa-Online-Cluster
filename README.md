@@ -8,6 +8,7 @@ Language : Python
 Library : matplot, seabon, sklearn, pandas, numpy
 Used for Coopertion : Github
 ```
+> Data : [피파 온라인 데이터 센터](http://fifaonline4.nexon.com/datacenter)
 
 ### 2. Contribute
 
