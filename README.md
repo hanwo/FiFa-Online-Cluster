@@ -1,4 +1,4 @@
-# FIFA-Online-Players stat-Clustering
+# FIFA_Online_Players stat_Clustering
 
 ### 1. Project Description
 
@@ -11,5 +11,5 @@ Used for Coopertion : Github
 
 ### 2. Contribute
 
-> [@Sichan Song](https://github.com/sichan0107) <br>
+> [@Sichan Song](https://github.com/sichan0107/fifa_online_cluster) <br>
 > [@Wooseok Han](https://github.com/hanwo)
