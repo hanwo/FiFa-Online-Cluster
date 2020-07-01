@@ -12,4 +12,4 @@ Used for Coopertion : Github
 ### 2. Contribute
 
 > [@Sichan Song](https://github.com/sichan0107/fifa_online_cluster) <br>
-> [@Wooseok Han](https://github.com/hanwo)
+> [@Wooseok Han](https://github.com/hanwo/FiFa_Online_Cluster)
