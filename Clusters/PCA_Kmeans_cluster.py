@@ -57,7 +57,6 @@ plt.show()
 kmeans_pca = KMeans(n_clusters = 3)
 kmeans_pca.fit(scores_pca)
 df_pca_kmeans = pd.concat([df, pd.DataFrame(scores_pca)], axis = 1)
-df_pca_kmeans.head()
 df_pca_kmeans.columns.values[-4:] = ['c1','c2','c3','c4']
 df_pca_kmeans['K-Means PCA'] = kmeans_pca.labels_
 df_pca_kmeans['Position'] = df_pca_kmeans['K-Means PCA'].map({ 0 : 'Striker',

@@ -5,10 +5,9 @@ import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 import seaborn as sns
 
-players = pd.read_csv("player_data.csv")
+players = pd.read_csv("../DataSet/player_data.csv")
 
 feature = players[["speed", "shoot", "pass", "dribble", "defense", "physical"]]
-name = players["name"]
 
 model = KMeans(n_clusters=3)
 model.fit(feature)
@@ -18,7 +17,6 @@ predict = pd.DataFrame(result_kmeans)
 predict.columns = ['predict']
 
 r = pd.concat([feature, predict], axis=1)
-print(r.head(15))
 for idx, i in enumerate(r['predict']):
     if i == 0:
         r['predict'][idx] = "Striker"
@@ -27,10 +25,11 @@ for idx, i in enumerate(r['predict']):
     elif i == 2 :
         r['predict'][idx] = "Defense"
 
+# Kmeans 시각화
 g = sns.scatterplot(x="speed", y="dribble", hue = 'predict', style = 'predict', data=r)
-# sns.pairplot(r, hue="predict", markers=["o", "s", "D"])
-# plt.xlabel('Speed')
-# plt.ylabel('dribble')
-g.set_title("speed & dribble")
-# g.legend(loc='lower right', bbox_to_anchor=(1.25, 0.5), ncol=1)
+plt.title('Speed & Dribble')
+
+# Feature 전체 클러스터링에 대한 시각화
+sns.pairplot(r, hue="predict", markers=["o", "s", "D"])
+
 plt.show()

@@ -21,7 +21,6 @@ def start_crawl(url):
         driver.implicitly_wait(2)
         player_list = driver.find_elements_by_class_name("tr")
         for i in range(0, len(player_list)) :
-        #for i in range(0, 10) :
             driver.implicitly_wait(3)
             player_info = driver.find_elements_by_class_name("player_info")[i]
             detail_button = driver.find_elements_by_class_name("btn_detail_link")[i]
@@ -30,10 +29,8 @@ def start_crawl(url):
             actions.reset_actions()
             info = get_player_name_stats(driver)
             all_player.append(info)
-            #print(all_player[i])
             driver.close()
             driver.switch_to.window(driver.window_handles[0])
-        #print(all_player)
     except Exception as ex :
         print("start_crawl caused error : ", ex)     
     return all_player
@@ -48,7 +45,6 @@ def get_player_name_stats(driver):
         stats = driver.find_element_by_css_selector("div.content_middle").find_elements_by_class_name("ab")
         for stat in stats:
             player_info_list.append(stat.find_element_by_class_name("value").text) 
-        #print(player_info_list)
     except Exception as ex :
         print("get_player_name_stats caused error : ", ex)
 

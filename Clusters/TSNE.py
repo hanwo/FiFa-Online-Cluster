@@ -9,7 +9,6 @@ import seaborn as sns
 players = pd.read_csv("player_data.csv")
 
 feature = players[["speed", "shoot", "pass", "dribble", "defense", "physical"]]
-name = players["name"]
 
 model = KMeans(n_clusters=3)
 model.fit(feature)
@@ -29,12 +28,10 @@ for idx, i in enumerate(r['predict']):
 feature_df = pd.DataFrame(feature)
 
 transformed = TSNE(n_components=2).fit_transform(feature_df)
-transformed.shape
 
 xs = transformed[:,0]
 ys = transformed[:,1]
 g = sns.scatterplot(x=xs, y=ys, hue = 'predict', style = 'predict', data=r)
-# plt.scatter(xs,ys, c=r['predict'])  #라벨은 색상으로 분류됨
-plt.title("t-SNE")
-plt.legend(loc='lower right', bbox_to_anchor=(1.25, 0.5), ncol=1)
+g.set_title("t-SNE")
+plt.legend(loc='best', bbox_to_anchor=(1.25, 0.5), ncol=1)
 plt.show()
